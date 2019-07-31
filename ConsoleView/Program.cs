@@ -11,13 +11,16 @@ namespace ConsoleView
             var mapWriter = new MapWriter();
             var mapGenerator = new MapGenerator();
             var map = mapGenerator.GetMap(20);
-            
-            while (true)
+
+            var dayCounter = 0;
+            foreach (var day in map.Run())
             {
-                mapWriter.Write(map.Current);
-                map.NextDay();
+                mapWriter.Write(day);
                 Thread.Sleep(TimeSpan.FromSeconds(1));
+                dayCounter++;
             }
+            
+            Console.WriteLine($"The End. Days: {dayCounter}");
         }
     }
 }
