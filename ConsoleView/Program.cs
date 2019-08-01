@@ -4,9 +4,9 @@ using Core;
 
 namespace ConsoleView
 {
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var mapWriter = new MapWriter();
             var mapGenerator = new MapGenerator();
@@ -16,10 +16,10 @@ namespace ConsoleView
             foreach (var day in map.Run())
             {
                 mapWriter.Write(day);
-                Thread.Sleep(TimeSpan.FromSeconds(1));
+                Thread.Sleep(TimeSpan.FromSeconds(0.1));
                 dayCounter++;
             }
-            
+
             Console.WriteLine($"The End. Days: {dayCounter}");
         }
     }

@@ -13,7 +13,7 @@ namespace ConsoleView
             for (var x = 0; x < xSize; x++)
             {
                 var row = new StringBuilder(ySize);
-                for (int y = 0; y<ySize; y++)
+                for (var y = 0; y < ySize; y++)
                 {
                     row.Append(mapState[x, y] ? "o " : "  ");
                 }
