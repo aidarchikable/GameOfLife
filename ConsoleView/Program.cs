@@ -6,7 +6,7 @@ namespace ConsoleView
 {
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             var mapWriter = new MapWriter();
             var mapGenerator = new MapGenerator();

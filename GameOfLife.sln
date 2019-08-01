@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Test", "Core.Test\Core.Test.csproj", "{8A64CD5D-5DD9-4BF0-A97B-0FCC58640F7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerformanceChecker", "PerformanceChecker\PerformanceChecker.csproj", "{426658FC-291C-4358-ACB8-AA16C6B7682D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{8A64CD5D-5DD9-4BF0-A97B-0FCC58640F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8A64CD5D-5DD9-4BF0-A97B-0FCC58640F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8A64CD5D-5DD9-4BF0-A97B-0FCC58640F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{426658FC-291C-4358-ACB8-AA16C6B7682D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{426658FC-291C-4358-ACB8-AA16C6B7682D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{426658FC-291C-4358-ACB8-AA16C6B7682D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{426658FC-291C-4358-ACB8-AA16C6B7682D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
