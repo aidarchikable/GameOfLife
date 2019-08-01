@@ -7,25 +7,35 @@ namespace PerformanceChecker
     {
         private static void Main()
         {
-            // ToDo add profiler
-            var mapGenerator = new MapGenerator();
-            // My goal is map which size is 100000 x 100000
-            var map = mapGenerator.GetMap(3000);
-
             var dayCounter = 0;
-            var tempDate = DateTime.UtcNow;
-            using (var enumerator = map.Run().GetEnumerator())
+            try
             {
-                while (enumerator.MoveNext())
+                // ToDo add profiler
+                var mapGenerator = new MapGenerator();
+                // My goal is map which size is 100000 x 100000
+                var map = mapGenerator.GetMap(4000);
+
+                var tempDate = DateTime.UtcNow;
+                using (var enumerator = map.Run().GetEnumerator())
                 {
-                    Console.WriteLine($"{DateTime.UtcNow - tempDate:g}");
-                    // Temporary way to profile performance
-                    tempDate = DateTime.UtcNow;
-                    dayCounter++;
+                    while (enumerator.MoveNext())
+                    {
+                        Console.WriteLine($"{DateTime.UtcNow - tempDate:g} - Memory size: {GC.GetTotalMemory(false):0,000,000,000} bytes");
+                        // Temporary way to profile performance
+                        tempDate = DateTime.UtcNow;
+                        dayCounter++;
+                    }
                 }
-            }
             
-            Console.WriteLine($"The End. Days: {dayCounter}");
+                Console.WriteLine($"The End. Days: {dayCounter}");
+            }
+            catch (OutOfMemoryException)
+            {
+                Console.WriteLine($"Out of memory after {dayCounter} days");
+                Console.WriteLine($"Memory size: {GC.GetTotalMemory(false):0,000,000,000} bytes");
+                
+                Environment.Exit(0);
+            }
         }
     }
 }
